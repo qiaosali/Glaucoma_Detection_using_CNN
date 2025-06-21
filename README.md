@@ -1,31 +1,17 @@
 # Glaucoma_Detection_using_CNN
 Design and implementation of glaucoma detection system based on multiple CNN model
 https://drive.google.com/drive/folders/1S5DOmHoWP5GvG_MVlpQurnNiMrAuBwKv?usp=sharing
-Begin with Data Processing : 1) Download
 
-
-
-
-
-# Glaucoma Detection using CNN
-
-Retinal fundus photography allows ophthalmologists to visually inspect the optic disc and surrounding structures for signs of glaucoma. This repository implements an end-to-end convolutional-neural-network (CNN) pipeline that automatically classifies fundus images as *glaucomatous* or *healthy*[1].
-
----
+Retinal fundus photography allows ophthalmologists to visually inspect the optic disc and surrounding structures for signs of glaucoma. This repository implements an end-to-end convolutional-neural-network (CNN) pipeline that automatically classifies fundus images as *glaucomatous* or *healthy*.
 
 ## **Key Features**
 
 - Single-step training pipeline (data loading → preprocessing → augmentation → training → evaluation)  
 - Configurable CNN backbone (custom CNN or transfer-learning with ImageNet weights)  
-- Out-of-the-box support for common public datasets of glaucoma and healthy eyes[2]  
-- Detailed metrics (accuracy, ROC-AUC, precision, recall, F1) and confusion matrix plots  
-- Grad-CAM visualisations to highlight image regions that drive the model’s decision
-
----
+- Out-of-the-box support for common public datasets of glaucoma and healthy eyes  
+- Detailed metrics (accuracy, precision, recall, F1) and confusion matrix plots  
 
 ## **Repository Structure**
-
-```
 Glaucoma_Detection_using_CNN/
 │
 ├── data/                 # (empty) – place your datasets here
@@ -155,16 +141,4 @@ This project is released under the MIT License – see `LICENSE` for details.
 - Public fundus datasets and prior open-source efforts in glaucoma detection[2][3]  
 - Frameworks: PyTorch, Albumentations, Matplotlib
 
-Happy coding!
 
-[1] https://github.com/qiaosali/Glaucoma_Detection_using_CNN/
-[2] https://github.com/SaiHitesh16/Glaucoma-Detection-using-CNN
-[3] https://github.com/tobixoxo/glaucoma-detection
-[4] https://github.com/topics/glaucoma-detection
-[5] https://github.com/lalit3011agarwal/Glaucoma-Detection-using-Convolutional-Neural-Network
-[6] https://github.com/sabinagio/do-you-see-what-AI-see
-[7] https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Attention_Based_Glaucoma_Detection_A_Large-Scale_Database_and_CNN_Model_CVPR_2019_paper.pdf
-[8] https://github.com/smilell/AG-CNN
-[9] https://www.linkedin.com/posts/fahad-abdullah-810437250_excited-to-showcase-my-ongoing-project-glaucoma-activity-7192934640620376064-IMMq
-[10] https://ar5iv.labs.arxiv.org/html/1903.10831
-[11] https://pubmed.ncbi.nlm.nih.gov/31283476/
