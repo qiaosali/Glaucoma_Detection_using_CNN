@@ -9,11 +9,11 @@ Begin with Data Processing : 1) Download
 
 # Glaucoma Detection using CNN
 
-Retinal fundus photography allows ophthalmologists to visually inspect the optic disc and surrounding structures for signs of glaucoma. This repository implements an end-to-end convolutional-neural-network (CNN) pipeline that automatically classifies fundus images as glaucomatous or healthy[1].
+Retinal fundus photography allows ophthalmologists to visually inspect the optic disc and surrounding structures for signs of glaucoma. This repository implements an end-to-end convolutional-neural-network (CNN) pipeline that automatically classifies fundus images as *glaucomatous* or *healthy*[1].
 
 ---
 
-## *Key Features*
+## **Key Features**
 
 - Single-step training pipeline (data loading → preprocessing → augmentation → training → evaluation)  
 - Configurable CNN backbone (custom CNN or transfer-learning with ImageNet weights)  
@@ -23,9 +23,9 @@ Retinal fundus photography allows ophthalmologists to visually inspect the optic
 
 ---
 
-## *Repository Structure*
+## **Repository Structure**
 
-
+```
 Glaucoma_Detection_using_CNN/
 │
 ├── data/                 # (empty) – place your datasets here
@@ -45,33 +45,33 @@ Glaucoma_Detection_using_CNN/
 ├── config.yaml           # All hyper-parameters in one place
 ├── README.md             # You are here
 └── LICENSE
-
+```
 
 ---
 
-## *Quick Start*
+## **Quick Start**
 
 ### 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/qiaosali/Glaucoma_Detection_using_CNN.git
 cd Glaucoma_Detection_using_CNN
-
+```
 
 ### 2. Create a virtual environment & install requirements
 
-bash
+```bash
 python -m venv .venv
 source .venv/bin/activate          # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-
+```
 
 ### 3. Download a dataset
 
 Several publicly available fundus datasets contain glaucoma labels, e.g. RIM-ONE, ACRIMA and REFUGE[3].  
-Place the images in data/train and data/test using the following folder structure:
+Place the images in `data/train` and `data/test` using the following folder structure:
 
-
+```
 data/train/
 │
 ├── glaucomatous/
@@ -80,31 +80,31 @@ data/train/
 data/test/
 ├── glaucomatous/
 └── healthy/
+```
 
-
-If your dataset ships with CSV annotations instead of folders, adapt the paths in src/dataloaders.py.
+If your dataset ships with CSV annotations instead of folders, adapt the paths in `src/dataloaders.py`.
 
 ### 4. Train
 
-bash
+```bash
 python src/train.py --config config.yaml
-
+```
 
 ### 5. Evaluate
 
-bash
+```bash
 python src/evaluate.py --weights path/to/checkpoint.pt
+```
 
-
-All metrics and plots are saved in runs//.
+All metrics and plots are saved in `runs//`.
 
 ---
 
-## *Configuration*
+## **Configuration**
 
-Every hyper-parameter can be edited in config.yaml, including  
+Every hyper-parameter can be edited in `config.yaml`, including  
 
-- CNN backbone (custom, resnet50, vgg16, …)  
+- CNN backbone (`custom`, `resnet50`, `vgg16`, …)  
 - input resolution  
 - optimiser & learning-rate schedule  
 - batch size / number of epochs  
@@ -112,47 +112,59 @@ Every hyper-parameter can be edited in config.yaml, including
 
 ---
 
-## *Results*
+## **Results**
 
 | Backbone | Dataset | Accuracy | ROC-AUC |
 |----------|---------|----------|---------|
 | ResNet-50 (fine-tuned) | RIM-ONE | 0.88 | 0.94 |
 | VGG-16 (fine-tuned) | ACRIMA | 0.87 | 0.93 |
 
-(Reproduce by running the scripts on the corresponding dataset splits.)
+*(Reproduce by running the scripts on the corresponding dataset splits.)*
 
 ---
 
-## *Model Interpretability*
+## **Model Interpretability**
 
 Grad-CAM heat-maps are generated automatically after evaluation to verify that the network focuses on clinically relevant regions (optic disc, neuro-retinal rim).
 
 ---
 
-## *Citation*
+## **Citation**
 
 If you use this code in your research, please cite:
 
-
+```
 @misc{qiaosali2025glaucoma,
   title   = {Glaucoma Detection using CNN},
   author  = {Qiao, Sa Li},
   year    = {2025},
   howpublished = {\url{https://github.com/qiaosali/Glaucoma_Detection_using_CNN}}
 }
-
-
----
-
-## *License*
-
-This project is released under the MIT License – see LICENSE for details.
+```
 
 ---
 
-## *Acknowledgements*
+## **License**
+
+This project is released under the MIT License – see `LICENSE` for details.
+
+---
+
+## **Acknowledgements**
 
 - Public fundus datasets and prior open-source efforts in glaucoma detection[2][3]  
 - Frameworks: PyTorch, Albumentations, Matplotlib
 
 Happy coding!
+
+[1] https://github.com/qiaosali/Glaucoma_Detection_using_CNN/
+[2] https://github.com/SaiHitesh16/Glaucoma-Detection-using-CNN
+[3] https://github.com/tobixoxo/glaucoma-detection
+[4] https://github.com/topics/glaucoma-detection
+[5] https://github.com/lalit3011agarwal/Glaucoma-Detection-using-Convolutional-Neural-Network
+[6] https://github.com/sabinagio/do-you-see-what-AI-see
+[7] https://openaccess.thecvf.com/content_CVPR_2019/papers/Li_Attention_Based_Glaucoma_Detection_A_Large-Scale_Database_and_CNN_Model_CVPR_2019_paper.pdf
+[8] https://github.com/smilell/AG-CNN
+[9] https://www.linkedin.com/posts/fahad-abdullah-810437250_excited-to-showcase-my-ongoing-project-glaucoma-activity-7192934640620376064-IMMq
+[10] https://ar5iv.labs.arxiv.org/html/1903.10831
+[11] https://pubmed.ncbi.nlm.nih.gov/31283476/
